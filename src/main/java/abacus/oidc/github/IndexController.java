@@ -1,4 +1,4 @@
-package abacus.oidc.sample1;
+package abacus.oidc.github;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
