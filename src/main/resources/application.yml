@@ -1,0 +1,35 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Spring 3 and Keycloak1
+  security:
+    user:
+      name: user
+      password: 1234
+    oauth2:
+      client:
+        provider:
+          external:
+            issuer-uri: http://192.168.0.102:30851/realms/sample
+        resourceserver:
+          jwt:
+            issuer-uri: http://192.168.0.102:30851/realms/sample
+        registration:
+          external:
+            provider: external
+            client-name: sample-java-one
+            client-id: sample-java-1
+            scope: openid,offline_access,profile
+            authorization-grant-type: authorization_code
+          # github:
+          #   clientId: 229b024dabdc1a5cc8a9
+          #   clientSecret: 305b2d796834b742efdaa4108205f60b2e9b8dd9
+
+logging:
+  level:
+    org:
+      springframework:
+        security: INFO
+  pattern:
+    console: '%d{dd-MM-yyyy HH:mm:ss} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n'
